@@ -5,11 +5,9 @@ import java.util.Scanner;
 public class MakeChange {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
 		
 		requestPrice();
 		
-		input.close();
 	}
 	public static void moneyTendered(float itemPrice){
 		Scanner input = new Scanner(System.in);
@@ -48,6 +46,24 @@ public class MakeChange {
 				requestPrice();
 		}
 		else moneyTendered(price);
+		
+		String tenderAgain;
+		System.out.print("Would you like to process another transaction? (Y or N): ");
+		if( (tenderAgain = input.next().toUpperCase()).equals("Y") ) {
+				requestPrice();
+				input.close();
+				return;
+			}
+			else if( (tenderAgain.equals("N")) ){
+				input.close();
+				return;
+			}
+			else {
+				System.err.println("Invalid response.");
+				requestPrice();
+				return;
+			}
+		
 	}
 	
 	public static void calculateChange(float change){
