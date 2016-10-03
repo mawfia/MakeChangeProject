@@ -1,3 +1,5 @@
+//Created by Michael Andrew Williams on 28 September 2016
+
 package cashregister;
 import java.util.Scanner;
 
